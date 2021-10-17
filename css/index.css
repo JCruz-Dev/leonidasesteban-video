@@ -1,0 +1,137 @@
+:root {
+    --Primary: #43dde6;
+    --White: #ffffff;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    color: var(--White);
+    background-color: var(--Primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+.container {
+    margin: auto;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.img-right,
+.img-left {
+    width: 12.5rem;
+    position: fixed;
+}
+.img-right {
+    top: 0;
+    left: 0;
+}
+.img-left {
+    bottom: 0;
+    right: 0;
+}
+video {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    aspect-ratio: 16/9;
+}
+.video-title,
+.overlay {
+    transition: all 0.2s ease-in;
+}
+.video-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    opacity: 0;
+    font-size: 1.2rem;
+}
+.video-wrapper {
+    position: relative;
+}
+.video-wrapper:hover .video-buttons {
+    opacity: 1;
+    user-select: initial;
+    pointer-events: initial;
+}
+.overlay {
+    content: '';
+    width: 100%;
+    height: inherit;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+}
+.video-wrapper:hover .overlay,
+.video-wrapper:hover .video-title,
+.video-wrapper:hover .video-progress {
+    opacity: 1;
+}
+
+.video-buttons {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in;
+    z-index: 1;
+}
+.video-progress {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    justify-content: space-between;
+}
+.video-progress span {
+    padding: 0.5rem;
+}
+.video-progress input[type='range'] {
+    width: 100%;
+}
+button {
+    background: none;
+    width: 40px;
+    height: inherit;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.button-forward {
+    background-image: url(../icons/forward.svg);
+}
+.button-backward {
+    background-image: url(../icons/backward.svg);
+}
+.button-play {
+    background-image: url(../icons/play.svg);
+}
+.button-pause {
+    background-image: url(../icons/pause.svg);
+}
+
+@media screen and (min-width: 80rem) {
+    .img-right,
+    .img-left {
+        width: auto;
+    }
+}
