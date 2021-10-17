@@ -5,7 +5,7 @@ const backward = document.getElementById('backward');
 const video =  document.getElementById('video');
 const videoRange = document.getElementById('video-range');
 const videoDurationElement = document.getElementById('video-duration');
-let videoProgressTime = document.getElementById('video-progress-time')  
+let videoProgressTime = document.getElementById('video-progress-time')
 
 document.addEventListener('DOMContentLoaded', () => {
     pause.hidden =  true;
