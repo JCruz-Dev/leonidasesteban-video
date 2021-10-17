@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/index.css" />
+        <title>Video pLayer</title>
+    </head>
+    <body>
+        <img class="img-left" src="./icons/elipsis-1.svg" alt="" />
+        <img class="img-right" src="./icons/elipsis-2.svg" alt="" />
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="overlay"></div>
+                <h1 class="video-title">People Dancing</h1>
+                <div class="video-buttons">
+                    <button id="backward" class="button-backward"></button>
+                    <button id="play" class="button-play"></button>
+                    <button id="pause" class="button-pause"></button>
+                    <button id="forward" class="button-forward"></button>
+                </div>
+                <video src="./people.mp4" id="video"></video>
+                <div class="video-progress">
+                    <span id="video-progress-time">00:00</span>
+                    <input
+                        type="range"
+                        class="video-range"
+                        name="video-range"
+                        id="video-range"
+                        min="0"
+                        value="0"
+                        step="1"
+                    />
+                    <span id="video-duration">00:00</span>
+                </div>
+            </div>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
